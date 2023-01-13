@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+#menu-page {
+
+    .header {
+        padding: 15px 0;
+        background-color: #08561F;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 50px;
+        }
+
+        h1 {
+            font-size: 40px;
+            font-family: 'Fredoka One', cursive;
+        }
+    }
+
+    .menu {
+        background-image: url(../media/menu/bg.png);
+        min-height: 80vh;
+
+        
+
+        .filters_menu {
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            -webkit-box-pack: center;
+            justify-content: center;
+            list-style-type: none;
+            margin: 45px 0 20px 0;
+
+
+            li {
+                padding: 7px 25px;
+                cursor: pointer;
+                border-radius: 25px;
+                color: black;
+            }
+
+            .active {
+                background-color: #08561F;
+                color: #ffffff;
+            }
+        }
+
+        .filters-content {
+            .box {
+                position: relative;
+                margin-top: 25px;
+                color: #ffffff;
+                border-radius: 15px;
+                overflow: hidden;
+                background: linear-gradient(to bottom, #FAF6F6 25px, #08561F 25px);
+
+                .img-box {
+                    background: #FAF6F6;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 215px;
+                    border-radius: 0 0 45px 45px;
+
+                    img {
+                        max-width: 100%;
+                        max-height: 100%;
+                    }
+                }
+
+                .detail-box {
+                    padding: 25px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}

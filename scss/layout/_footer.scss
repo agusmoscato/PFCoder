@@ -1,0 +1,28 @@
+.footer_section {
+    background-color: #08561F;
+    color: #ffffff;
+    padding: 15px 0;
+    text-align: center;
+    margin-top: 50px;
+
+    h4 {
+        font-family: 'Fredoka One', cursive;
+    }
+
+    .footer_contact {
+        .contact_link_box {
+            display: flex;
+            flex-direction: column;
+            i {
+                margin-right: 5px;
+            }
+        }
+    }
+
+    .copy {
+        padding-top: 2em;
+        margin: 1em;
+        text-align: end;
+        font-size: x-small;
+    }
+}

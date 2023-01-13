@@ -1,0 +1,71 @@
+<html lang="es">
+
+<head>
+    <title>Proyecto Menu</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- font awesome style -->
+    <script src="https://kit.fontawesome.com/93e5081699.js" crossorigin="anonymous"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/main.css">
+
+</head>
+
+<body id="menu-page">
+    <header class="header">
+        <img src="./media/logo.png">
+        <h1>Solo Bebidas</h1>
+        <img src="./media/logo.png">
+    </header>
+    <section class="food_section layout_padding-bottom layout_padding-top  menu">
+        <div class="container">
+            <ul class="filters_menu">
+                <li class="active" data-filter="*">Todo</li>
+                <li data-filter=".aperitivos">Aperitivos</li>
+                <li data-filter=".cervezas">Cervezas</li>
+                <li data-filter=".bebidasBlancas">Bebidas Blancas</li>
+                <li data-filter=".gaseosas">Gaseosas</li>
+            </ul>
+
+            <div class="filters-content">
+                <div class="row grid" id="shopContent">
+                    <!-- ITEMS DEL MENU -->
+                </div>
+
+    </section>
+
+
+    <!-- end food section -->
+
+    <footer class="footer_section">
+        <div class="container">
+            <div>
+                <div class="footer_contact">
+                    <h4>
+                        Contactanos
+                    </h4>
+                    <div class="contact_link_box">
+                        <span>
+                            <i class="fa fa-whatsapp" aria-hidden="true"></i> +54 9 1234 56-7890
+                        </span>
+                        <span>
+                            <i class="fa fa-google" aria-hidden="true"></i> solobebidas@gmail.com
+                        </span>
+
+                    </div>
+                </div>
+
+            </div>
+            <p class="copy">
+                Copyright 2022 | <a href="https://agustinmoscato.com"> Agustin Moscato, web design</a>
+            </p>
+
+        </div>
+    </footer>
+    
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

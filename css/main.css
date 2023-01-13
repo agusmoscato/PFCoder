@@ -1,0 +1,123 @@
+/* Base */
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+  color: white; }
+
+a {
+  text-decoration: none;
+  color: white; }
+  a:hover {
+    color: white; }
+
+ol, ul {
+  padding-left: 0;
+  margin: 0; }
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden; }
+
+/* Layout */
+#menu-page .header {
+  padding: 15px 0;
+  background-color: #08561F;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  #menu-page .header img {
+    width: 50px; }
+  #menu-page .header h1 {
+    font-size: 40px;
+    font-family: 'Fredoka One', cursive; }
+
+#menu-page .menu {
+
+  min-height: 80vh; }
+  #menu-page .menu .filters_menu {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    justify-content: center;
+    list-style-type: none;
+    margin: 45px 0 20px 0; }
+    #menu-page .menu .filters_menu li {
+      padding: 7px 25px;
+      cursor: pointer;
+      border-radius: 25px;
+      color: black; }
+    #menu-page .menu .filters_menu .active {
+      background-color: #08561F;
+      color: #ffffff; }
+  #menu-page .menu .filters-content .box {
+    position: relative;
+    margin-top: 25px;
+    color: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #FAF6F6 25px, #08561F 25px); }
+    #menu-page .menu .filters-content .box .img-box {
+      background: #FAF6F6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 215px;
+      border-radius: 0 0 45px 45px; }
+      #menu-page .menu .filters-content .box .img-box img {
+        max-width: 100%;
+        max-height: 100%; }
+    #menu-page .menu .filters-content .box .detail-box {
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+
+.footer_section {
+  background-color: #08561F;
+  color: #ffffff;
+  padding: 15px 0;
+  text-align: center;
+  margin-top: 50px; }
+  .footer_section h4 {
+    font-family: 'Fredoka One', cursive; }
+  .footer_section .footer_contact .contact_link_box {
+    display: flex;
+    flex-direction: column; }
+    .footer_section .footer_contact .contact_link_box i {
+      margin-right: 5px; }
+  .footer_section .copy {
+    padding-top: 2em;
+    margin: 1em;
+    text-align: end;
+    font-size: x-small; }
+
+.button {
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  background: #31D843;
+  box-shadow: 0 5px #38a700; }
+  .button::after {
+    content: "Agregar al carrito"; }
+  .button:hover {
+    box-shadow: 0 3px #31D843;
+    top: 1px; }
+  .button:active {
+    box-shadow: 0 0 #31D843;
+    top: 5px; }
+    .button:active::after {
+      content: "Agregado correctamente!"; }

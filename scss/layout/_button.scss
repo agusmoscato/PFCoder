@@ -1,0 +1,34 @@
+.button {
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background: #31D843;
+    box-shadow: 0 5px #38a700;
+
+    &::after {
+        content: "Agregar al carrito"
+    }
+
+    &:hover {
+        box-shadow: 0 3px #31D843;
+        top: 1px;
+    }
+
+    &:active {
+        box-shadow: 0 0 #31D843;
+        top: 5px;
+
+        &::after {
+            content: "Agregado correctamente!";
+        }
+    }
+}
