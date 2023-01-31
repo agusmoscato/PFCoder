@@ -1,0 +1,42 @@
+.carrito{
+    #carritoMain{
+        background: #08561fc9;
+        width: 60%;
+        position: absolute;
+        right: 0;
+        z-index: 10;
+        text-align: -webkit-center;
+        border-radius: 0 0 0 45px;
+        #carritoItems{
+            .carritoBox{
+                width: 60%;
+                height: fit-content;
+                display: flex;
+                margin-top: 20px;
+                border-bottom: solid 1px white;
+                flex-direction: row-reverse;
+                .carritoImg{
+                    width: 15%;
+                    img{
+                        width: -webkit-fill-available;
+                        background: white;
+                        border-radius: 100px;
+                    }
+                }
+                .carritoProducto{
+                    width: 85%;
+                    align-self: center;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                }
+            }
+        }
+        
+        .general{
+            margin: 30px;
+        }
+    }
+    
+
+}

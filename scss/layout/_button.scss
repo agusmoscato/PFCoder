@@ -1,34 +1,50 @@
 .button {
-    min-width: 130px;
-    height: 40px;
-    color: #fff;
-    padding: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
-    outline: none;
-    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 0.7em 1.4em 0.7em 1.1em;
+    color: white;
+    background: linear-gradient(0deg, #14a73e 0%, hsl(125, 90%, 68%) 100%);
     border: none;
-    background: #31D843;
-    box-shadow: 0 5px #38a700;
+    letter-spacing: 0.05em;
+    border-radius: 20em;
 
     &::after {
         content: "Agregar al carrito"
     }
 
     &:hover {
-        box-shadow: 0 3px #31D843;
-        top: 1px;
+        box-shadow: 0 0.5em 1.5em -0.5em hsla(137, 79%, 37%, 0.596);
     }
 
     &:active {
-        box-shadow: 0 0 #31D843;
-        top: 5px;
+        box-shadow: 0 0.3em 1em -0.5em #14a73e98;
 
         &::after {
             content: "Agregado correctamente!";
         }
     }
+}
+
+#vaciarCarrito{
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background: linear-gradient(0deg, #14a73e 0%, #66f771 100%);
+    border: none;
+    margin: 20px;
+    &::after {
+        content: "🗑️"
+    }
+    &:hover {
+        box-shadow: 0 0.5em 1.5em -0.5em hsla(137, 79%, 37%, 0.596);
+    }
+
+    &:active {
+        box-shadow: 0 0.3em 1em -0.5em #14a73e98;
+    }
+
 }

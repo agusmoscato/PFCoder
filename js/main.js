@@ -1,5 +1,6 @@
-class Producto{
-    constructor(id, nombre, precio, categoria, img){
+/* CONSTRUCTOR DE LOS PRODUCTOS */
+class Producto {
+    constructor(id, nombre, precio, categoria, img) {
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;
@@ -7,11 +8,13 @@ class Producto{
         this.img = img;
     }
 }
+/* ----------------- */
 
-//lista de productos
+/* LISTA DE PRODUCTOS */
 const productos = [
-    new Producto(2, "fernet", 100, "aperitivo", "./media/MENU/APERITIVOS/FERNET.png"),
+    new Producto(0, "cinzano", 100, "aperitivo", "./media/MENU/APERITIVOS/CINZANO.png"),
     new Producto(1, "gancia", 100, "aperitivo", "./media/MENU/APERITIVOS/GANCIA.png"),
+    new Producto(2, "fernet", 100, "aperitivo", "./media/MENU/APERITIVOS/FERNET.png"),
     new Producto(3, "aperol", 100, "aperitivo", "./media/MENU/APERITIVOS/APEROL.png"),
     new Producto(4, "cynar", 100, "aperitivo", "./media/MENU/APERITIVOS/CYNAR.png"),
     new Producto(5, "quilmes", 100, "cerveza", "./media/MENU/CERVEZAS/QUILMES.png"),
@@ -29,26 +32,21 @@ const productos = [
     new Producto(17, "mirinda", 100, "gaseosa", "./media/MENU/GASEOSAS/MIRINDA.png"),
     new Producto(18, "paso de los toros", 100, "gaseosa", "./media/MENU/GASEOSAS/PASODELOSTOROS.png"),
     new Producto(19, "h2o", 100, "gaseosa", "./media/MENU/GASEOSAS/H2O.png"),
+
 ]
+/* ----------------- */
 
-const productosAperitivo = productos.filter( (producto) => producto.categoria === "aperitivo");
-const productosCerveza = productos.filter( (producto) => producto.categoria === "cerveza");
-const productosBebidaBlanca = productos.filter( (producto) => producto.categoria === "bebidaBlanca");
-const productosGaseosa = productos.filter( (producto) => producto.categoria === "gaseosa");
+// Enviar y devolver lista de productos del almacenamiento local
+localStorage.setItem("productos", JSON.stringify(productos));
+const productosAlmacenados = JSON.parse(localStorage.getItem("productos"));
 
-console.log(productosAperitivo);
-console.log(productosCerveza);
-console.log(productosBebidaBlanca);
-console.log(productosGaseosa);
+/* CREAR NODOS DE LOS PRODUCTOS Y PONERLOS EN EL DOM */
+const shopContent = document.getElementById("shopContent")
+productosAlmacenados.forEach((productos) => {
+    let content = document.createElement('div');
+    content.classList.add("col-sm-12", "col-lg-4", "all", `${productos.categoria}`);
 
-
- const shopContent = document.getElementById("shopContent")
-
-productos.forEach((productos) => {
-   let content = document.createElement('div');
-   content.classList.add("col-sm-12", "col-lg-4", "all");
-   
-   content.innerHTML =`
+    content.innerHTML = `
         <div class="box">
             <div>
                 <div class="img-box">
@@ -57,23 +55,138 @@ productos.forEach((productos) => {
                 <div class="detail-box">
                     <h5>${productos.nombre.toUpperCase()}</h5>
                     <h4>${productos.precio} $</h4>
-                    <button class="button">  </button>
+                    <button class="button cartButton${productos.id}">  </button>
                 </div>
             </div>
         </div>
     `
-    ;
+        ;
+    shopContent.append(content);
+});
+/* ----------------- */
 
-   shopContent.append(content);
-})
+/* FILTRO DE BOTONES */
+const filterButtons = document.querySelectorAll('.filter');
+const items = document.querySelectorAll('.all');
 
-/* switch () {
-    case value:
-        
-        break;
+filterButtons.forEach(filterButton => {
+    filterButton.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+        filterButton.classList.add("active");
+        const filter = filterButton.dataset.filter;
+        items.forEach(item => {
+            if (filter === 'all') {
+                item.classList.remove("hidden");
+            } else if (!item.classList.contains(filter)) {
+                item.classList.add("hidden");
+            } else {
+                item.classList.remove("hidden");
+            }
+        });
+    });
+});
+/* ----------------- */
 
-    default:
-        break;
+
+// CARRITO DE COMPRAS
+// Mostrar/dejar de mostrar carrito
+const carritoBtn = document.getElementById('carrito')
+const cartMain = document.getElementById(`carritoMain`)
+
+carritoBtn.addEventListener('click', () => {
+    cartMain.classList.toggle("hidden");
+});
+
+// Inicializar carrito
+let carrito = [];
+
+const cartButtons = document.querySelectorAll(`.button`);
+const counterDisplay = document.querySelector('#numero');
+let counter = 0;
+
+// Agregar producto al carrito
+cartButtons.forEach(cartButton => {
+    cartButton.addEventListener("click", () => {
+        const indexProductoSelec = Array.prototype.indexOf.call(cartButtons, cartButton);
+
+        const productoAgregar = productos.filter((producto) => producto.id === indexProductoSelec)[0];
+        // contador del carrito
+        counter++;
+        counterDisplay.innerHTML = counter;
+        // si hay producto existente, agregar la cantidad
+        const productoExistente = carrito.find(p => p.id === productoAgregar.id);
+        if (productoExistente) {
+            productoExistente.cantidad += 1;
+        } else {
+            carrito.push({
+                ...productoAgregar,
+                cantidad: 1
+            });
+        }
+
+        renderizarAlerta();
+        renderizarCarrito();
+        renderizarPrecioTotal();
+    });
+});
+
+const alerta = document.getElementById('alerta');
+
+function renderizarAlerta() {
+  alerta.style.display = "block";
+  setTimeout(function() {
+    alerta.style.display = "none";
+  }, 2000);
 }
 
- */
+// agregar objetos al dom
+function renderizarCarrito() {
+    let cartContent = document.getElementById("carritoItems");
+    cartContent.innerHTML = '';
+    carrito.forEach((producto) => {
+        let item = document.createElement('div');
+        item.classList.add(`carritoBox`);
+
+        item.innerHTML = `
+                <div class="carritoImg">
+                    <img src="${producto.img}" alt="">
+                </div>
+                <div class="carritoProducto">
+                    <h3><strong>${producto.nombre.toUpperCase()} </strong>  x${producto.cantidad}</h3>
+                    <h3>| $${producto.precio}</h3>
+                </div>`
+        ;
+        cartContent.append(item);
+    });
+}
+
+// Agregar el precio total al dom
+function renderizarPrecioTotal() {
+    let precioTotalCarrito = document.querySelector('.General');
+    let totalCarrito = sumarTotalCarrito(carrito);
+    precioTotalCarrito.innerHTML = `<h2>Total: <span>$ ${totalCarrito}</span></h2>`;
+}
+
+// Sumar precio total
+function sumarTotalCarrito(carrito) {
+    return carrito.reduce((total, producto) => {
+        return total + producto.precio * producto.cantidad;
+    }, 0);
+}
+
+// Vaciar carrito
+
+const clearButton = document.getElementById('vaciarCarrito');
+clearButton.addEventListener("click", () => {
+    while (carrito.length) {
+        carrito.pop();
+    }
+    // contador del carrito
+    counter = 0;
+    counterDisplay.innerHTML = counter;
+    renderizarCarrito();
+    renderizarPrecioTotal();
+});
+
+
+

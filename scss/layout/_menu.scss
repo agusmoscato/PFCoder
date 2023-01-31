@@ -1,11 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+.hidden{
+    display: none !important;
+}
+
 #menu-page {
+    background-image: url(../media/bg.jpg);
 
     .header {
         padding: 15px 0;
         background-color: #08561F;
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
 
         img {
@@ -16,10 +20,21 @@
             font-size: 40px;
             font-family: 'Fredoka One', cursive;
         }
+        #carrito{
+            cursor: pointer;
+        }
+        div {
+            display: flex;
+            align-items: flex-start;
+            
+        }
+        h2 {
+            margin-left: 10px;
+            align-self: end;
+        }
     }
 
     .menu {
-        background-image: url(../media/menu/bg.png);
         min-height: 80vh;
 
         
@@ -39,14 +54,19 @@
                 cursor: pointer;
                 border-radius: 25px;
                 color: black;
+                background-color: #e9ecef;
+                margin: 10px;
+                border: solid 1px;
+                box-shadow: #00000059 0px 5px 15px;
             }
 
             .active {
                 background-color: #08561F;
                 color: #ffffff;
+                box-shadow: none;
             }
         }
-
+        
         .filters-content {
             .box {
                 position: relative;
@@ -55,7 +75,7 @@
                 border-radius: 15px;
                 overflow: hidden;
                 background: linear-gradient(to bottom, #FAF6F6 25px, #08561F 25px);
-
+                box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
                 .img-box {
                     background: #FAF6F6;
                     display: flex;
@@ -80,3 +100,16 @@
         }
     }
 }
+
+.alerta {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #08561F;
+    border: solid #adadad82;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: none;
+  }
+  

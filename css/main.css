@@ -1,4 +1,4 @@
-/* Base */
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
 * {
   margin: 0;
@@ -23,59 +23,117 @@ html {
   overflow-x: hidden; }
 
 /* Layout */
-#menu-page .header {
-  padding: 15px 0;
-  background-color: #08561F;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-  #menu-page .header img {
-    width: 50px; }
-  #menu-page .header h1 {
-    font-size: 40px;
-    font-family: 'Fredoka One', cursive; }
-
-#menu-page .menu {
-
-  min-height: 80vh; }
-  #menu-page .menu .filters_menu {
-    padding: 0;
+.carrito #carritoMain {
+  background: #08561fc9;
+  width: 60%;
+  position: absolute;
+  right: 0;
+  z-index: 10;
+  text-align: -webkit-center;
+  border-radius: 0 0 0 45px; }
+  .carrito #carritoMain #carritoItems .carritoBox {
+    width: 60%;
+    height: fit-content;
     display: flex;
-    flex-wrap: wrap;
-    -webkit-box-pack: center;
-    justify-content: center;
-    list-style-type: none;
-    margin: 45px 0 20px 0; }
-    #menu-page .menu .filters_menu li {
-      padding: 7px 25px;
-      cursor: pointer;
-      border-radius: 25px;
-      color: black; }
-    #menu-page .menu .filters_menu .active {
-      background-color: #08561F;
-      color: #ffffff; }
-  #menu-page .menu .filters-content .box {
-    position: relative;
-    margin-top: 25px;
-    color: #ffffff;
-    border-radius: 15px;
-    overflow: hidden;
-    background: linear-gradient(to bottom, #FAF6F6 25px, #08561F 25px); }
-    #menu-page .menu .filters-content .box .img-box {
-      background: #FAF6F6;
+    margin-top: 20px;
+    border-bottom: solid 1px white;
+    flex-direction: row-reverse; }
+    .carrito #carritoMain #carritoItems .carritoBox .carritoImg {
+      width: 15%; }
+      .carrito #carritoMain #carritoItems .carritoBox .carritoImg img {
+        width: -webkit-fill-available;
+        background: white;
+        border-radius: 100px; }
+    .carrito #carritoMain #carritoItems .carritoBox .carritoProducto {
+      width: 85%;
+      align-self: center;
       display: flex;
-      justify-content: center;
       align-items: center;
-      height: 215px;
-      border-radius: 0 0 45px 45px; }
-      #menu-page .menu .filters-content .box .img-box img {
-        max-width: 100%;
-        max-height: 100%; }
-    #menu-page .menu .filters-content .box .detail-box {
-      padding: 25px;
+      justify-content: flex-start; }
+  .carrito #carritoMain .general {
+    margin: 30px; }
+
+.hidden {
+  display: none !important; }
+
+#menu-page {
+  background-image: url(../media/bg.jpg); }
+  #menu-page .header {
+    padding: 15px 0;
+    background-color: #08561F;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; }
+    #menu-page .header img {
+      width: 50px; }
+    #menu-page .header h1 {
+      font-size: 40px;
+      font-family: 'Fredoka One', cursive; }
+    #menu-page .header #carrito {
+      cursor: pointer; }
+    #menu-page .header div {
       display: flex;
-      flex-direction: column;
-      align-items: center; }
+      align-items: flex-start; }
+    #menu-page .header h2 {
+      margin-left: 10px;
+      align-self: end; }
+  #menu-page .menu {
+    min-height: 80vh; }
+    #menu-page .menu .filters_menu {
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      -webkit-box-pack: center;
+      justify-content: center;
+      list-style-type: none;
+      margin: 45px 0 20px 0; }
+      #menu-page .menu .filters_menu li {
+        padding: 7px 25px;
+        cursor: pointer;
+        border-radius: 25px;
+        color: black;
+        background-color: #e9ecef;
+        margin: 10px;
+        border: solid 1px;
+        box-shadow: #00000059 0px 5px 15px; }
+      #menu-page .menu .filters_menu .active {
+        background-color: #08561F;
+        color: #ffffff;
+        box-shadow: none; }
+    #menu-page .menu .filters-content .box {
+      position: relative;
+      margin-top: 25px;
+      color: #ffffff;
+      border-radius: 15px;
+      overflow: hidden;
+      background: linear-gradient(to bottom, #FAF6F6 25px, #08561F 25px);
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px; }
+      #menu-page .menu .filters-content .box .img-box {
+        background: #FAF6F6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 215px;
+        border-radius: 0 0 45px 45px; }
+        #menu-page .menu .filters-content .box .img-box img {
+          max-width: 100%;
+          max-height: 100%; }
+      #menu-page .menu .filters-content .box .detail-box {
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; }
+
+.alerta {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #08561F;
+  border: solid #adadad82;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: none; }
 
 .footer_section {
   background-color: #08561F;
@@ -97,27 +155,37 @@ html {
     font-size: x-small; }
 
 .button {
-  min-width: 130px;
-  height: 40px;
-  color: #fff;
-  padding: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
-  outline: none;
-  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0.7em 1.4em 0.7em 1.1em;
+  color: white;
+  background: linear-gradient(0deg, #14a73e 0%, #64f770 100%);
   border: none;
-  background: #31D843;
-  box-shadow: 0 5px #38a700; }
+  letter-spacing: 0.05em;
+  border-radius: 20em; }
   .button::after {
     content: "Agregar al carrito"; }
   .button:hover {
-    box-shadow: 0 3px #31D843;
-    top: 1px; }
+    box-shadow: 0 0.5em 1.5em -0.5em rgba(20, 169, 62, 0.596); }
   .button:active {
-    box-shadow: 0 0 #31D843;
-    top: 5px; }
+    box-shadow: 0 0.3em 1em -0.5em #14a73e98; }
     .button:active::after {
       content: "Agregado correctamente!"; }
+
+#vaciarCarrito {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background: linear-gradient(0deg, #14a73e 0%, #66f771 100%);
+  border: none;
+  margin: 20px; }
+  #vaciarCarrito::after {
+    content: "🗑️"; }
+  #vaciarCarrito:hover {
+    box-shadow: 0 0.5em 1.5em -0.5em rgba(20, 169, 62, 0.596); }
+  #vaciarCarrito:active {
+    box-shadow: 0 0.3em 1em -0.5em #14a73e98; }
