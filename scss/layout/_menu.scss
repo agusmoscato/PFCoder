@@ -7,7 +7,7 @@
 
     .header {
         padding: 15px 0;
-        background-color: #08561F;
+        background-color: #0B6E4F;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -61,7 +61,7 @@
             }
 
             .active {
-                background-color: #08561F;
+                background-color: #0B6E4F;
                 color: #ffffff;
                 box-shadow: none;
             }
@@ -74,10 +74,10 @@
                 color: #ffffff;
                 border-radius: 15px;
                 overflow: hidden;
-                background: linear-gradient(to bottom, #FAF6F6 25px, #08561F 25px);
+                background: linear-gradient(to bottom, #e9ecef 25px, #0B6E4F 25px);
                 box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
                 .img-box {
-                    background: #FAF6F6;
+                    background: #e9ecef;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -104,12 +104,16 @@
 .alerta {
     position: fixed;
     bottom: 20px;
-    right: 20px;
-    background-color: #08561F;
-    border: solid #adadad82;
+    left: 20px;
+    background: linear-gradient(0deg, #14a73e 0%, hsl(125, 90%, 68%) 100%);
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
     display: none;
+    z-index: 10;
+    text-align-last: center;
+    p{
+        margin-bottom: 0;
+    }
   }
   

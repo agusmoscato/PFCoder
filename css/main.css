@@ -24,34 +24,41 @@ html {
 
 /* Layout */
 .carrito #carritoMain {
-  background: #08561fc9;
-  width: 60%;
-  position: absolute;
-  right: 0;
+  background: #dee2e68a;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
   z-index: 10;
   text-align: -webkit-center;
-  border-radius: 0 0 0 45px; }
-  .carrito #carritoMain #carritoItems .carritoBox {
-    width: 60%;
-    height: fit-content;
-    display: flex;
-    margin-top: 20px;
-    border-bottom: solid 1px white;
-    flex-direction: row-reverse; }
-    .carrito #carritoMain #carritoItems .carritoBox .carritoImg {
-      width: 15%; }
-      .carrito #carritoMain #carritoItems .carritoBox .carritoImg img {
-        width: -webkit-fill-available;
-        background: white;
-        border-radius: 100px; }
-    .carrito #carritoMain #carritoItems .carritoBox .carritoProducto {
-      width: 85%;
-      align-self: center;
+  color: black; }
+  .carrito #carritoMain #carritoItems {
+    width: fit-content; }
+    .carrito #carritoMain #carritoItems .carritoBox {
+      width: 70%;
       display: flex;
-      align-items: center;
-      justify-content: flex-start; }
+      margin-top: 20px;
+      flex-direction: row-reverse; }
+      .carrito #carritoMain #carritoItems .carritoBox .carritoImg {
+        width: 8%; }
+        .carrito #carritoMain #carritoItems .carritoBox .carritoImg img {
+          width: -webkit-fill-available;
+          background: white;
+          border-radius: 100px;
+          border: solid 1px; }
+      .carrito #carritoMain #carritoItems .carritoBox .carritoProducto {
+        width: 85%;
+        align-self: center;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border-bottom: solid 1px black; }
+        .carrito #carritoMain #carritoItems .carritoBox .carritoProducto h3, .carrito #carritoMain #carritoItems .carritoBox .carritoProducto h2, .carrito #carritoMain #carritoItems .carritoBox .carritoProducto strong {
+          color: black; }
   .carrito #carritoMain .general {
-    margin: 30px; }
+    margin: 3px;
+    width: fit-content; }
+    .carrito #carritoMain .general h2, .carrito #carritoMain .general span {
+      color: black; }
 
 .hidden {
   display: none !important; }
@@ -60,7 +67,7 @@ html {
   background-image: url(../media/bg.jpg); }
   #menu-page .header {
     padding: 15px 0;
-    background-color: #08561F;
+    background-color: #0B6E4F;
     display: flex;
     justify-content: space-around;
     align-items: center; }
@@ -97,7 +104,7 @@ html {
         border: solid 1px;
         box-shadow: #00000059 0px 5px 15px; }
       #menu-page .menu .filters_menu .active {
-        background-color: #08561F;
+        background-color: #0B6E4F;
         color: #ffffff;
         box-shadow: none; }
     #menu-page .menu .filters-content .box {
@@ -106,10 +113,10 @@ html {
       color: #ffffff;
       border-radius: 15px;
       overflow: hidden;
-      background: linear-gradient(to bottom, #FAF6F6 25px, #08561F 25px);
+      background: linear-gradient(to bottom, #e9ecef 25px, #0B6E4F 25px);
       box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px; }
       #menu-page .menu .filters-content .box .img-box {
-        background: #FAF6F6;
+        background: #e9ecef;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -127,16 +134,19 @@ html {
 .alerta {
   position: fixed;
   bottom: 20px;
-  right: 20px;
-  background-color: #08561F;
-  border: solid #adadad82;
+  left: 20px;
+  background: linear-gradient(0deg, #14a73e 0%, #64f770 100%);
   color: white;
   padding: 5px 10px;
   border-radius: 5px;
-  display: none; }
+  display: none;
+  z-index: 10;
+  text-align-last: center; }
+  .alerta p {
+    margin-bottom: 0; }
 
 .footer_section {
-  background-color: #08561F;
+  background-color: #0B6E4F;
   color: #ffffff;
   padding: 15px 0;
   text-align: center;
@@ -175,17 +185,39 @@ html {
     .button:active::after {
       content: "Agregado correctamente!"; }
 
-#vaciarCarrito {
+.carritoBtn {
+  position: fixed;
   cursor: pointer;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 10px;
   background: linear-gradient(0deg, #14a73e 0%, #66f771 100%);
   border: none;
-  margin: 20px; }
+  margin: 5px;
+  right: 0; }
+  .carritoBtn:hover {
+    box-shadow: 0 0.5em 1.5em -0.5em rgba(20, 169, 62, 0.596); }
+  .carritoBtn:active {
+    box-shadow: 0 0.3em 1em -0.5em #14a73e98; }
+
+#cerrarCarrito::after {
+  content: "X"; }
+
+#vaciarCarrito {
+  bottom: 0; }
   #vaciarCarrito::after {
     content: "🗑️"; }
-  #vaciarCarrito:hover {
-    box-shadow: 0 0.5em 1.5em -0.5em rgba(20, 169, 62, 0.596); }
-  #vaciarCarrito:active {
-    box-shadow: 0 0.3em 1em -0.5em #14a73e98; }
+
+#abrirCarrito {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  background: #0B6E4F;
+  padding: 7px 25px;
+  border-radius: 25px;
+  color: white;
+  margin: 10px;
+  border: solid 1px;
+  box-shadow: #00000059 0px 5px 15px; }
+  #abrirCarrito::after {
+    content: "Abrir Carrito"; }

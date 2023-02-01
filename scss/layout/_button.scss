@@ -28,17 +28,17 @@
     }
 }
 
-#vaciarCarrito{
+
+.carritoBtn{
+    position: fixed;
     cursor: pointer;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 10px;
     background: linear-gradient(0deg, #14a73e 0%, #66f771 100%);
     border: none;
-    margin: 20px;
-    &::after {
-        content: "🗑️"
-    }
+    margin: 5px;
+    right: 0;
     &:hover {
         box-shadow: 0 0.5em 1.5em -0.5em hsla(137, 79%, 37%, 0.596);
     }
@@ -47,4 +47,34 @@
         box-shadow: 0 0.3em 1em -0.5em #14a73e98;
     }
 
+}
+
+#cerrarCarrito{
+    &::after {
+        content: "X"
+    }
+}
+
+#vaciarCarrito{
+    bottom: 0;
+    &::after {
+        content: "🗑️"
+    }
+
+}
+
+#abrirCarrito{
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    background: #0B6E4F;
+    padding: 7px 25px;
+    border-radius: 25px;
+    color: white;
+    margin: 10px;
+    border: solid 1px;
+    box-shadow: #00000059 0px 5px 15px;
+    &::after {
+        content: "Abrir Carrito"
+    }
 }
