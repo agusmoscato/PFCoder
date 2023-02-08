@@ -30,7 +30,7 @@
 
 
 .carritoBtn{
-    position: fixed;
+    position: relative;
     cursor: pointer;
     width: 40px;
     height: 40px;
@@ -50,12 +50,14 @@
 }
 
 #cerrarCarrito{
+    position: fixed;
     &::after {
-        content: "X"
+        content: "❌"
     }
 }
 
 #vaciarCarrito{
+    position: fixed;
     bottom: 0;
     &::after {
         content: "🗑️"
@@ -78,3 +80,34 @@
         content: "Abrir Carrito"
     }
 }
+
+
+    .buttonMasUno{
+        width: 30px;
+        height: 30px;
+        border: solid 2px #635994;
+        background: transparent;
+        &::after {
+            content: "➕"
+        }
+    }
+    .buttonMenosUno{
+        width: 30px;
+        height: 30px;
+        border: solid 2px #635994;
+        background: transparent;
+        &::after {
+            content: "➖"
+        }
+    }
+    .buttonEliminar{
+        width: 30px;
+        height: 30px;
+        border: solid 2px #f92f60;
+        background: transparent;
+        &::after {
+            content: "❌"
+        }
+    }
+
+

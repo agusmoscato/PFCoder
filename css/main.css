@@ -22,6 +22,9 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden; }
 
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0; }
+
 /* Layout */
 .carrito #carritoMain {
   background: #dee2e68a;
@@ -30,7 +33,9 @@ html {
   bottom: 0;
   z-index: 10;
   text-align: -webkit-center;
-  color: black; }
+  color: black;
+  max-height: 50%;
+  overflow: auto; }
   .carrito #carritoMain #carritoItems {
     width: fit-content; }
     .carrito #carritoMain #carritoItems .carritoBox {
@@ -54,6 +59,9 @@ html {
         border-bottom: solid 1px black; }
         .carrito #carritoMain #carritoItems .carritoBox .carritoProducto h3, .carrito #carritoMain #carritoItems .carritoBox .carritoProducto h2, .carrito #carritoMain #carritoItems .carritoBox .carritoProducto strong {
           color: black; }
+        .carrito #carritoMain #carritoItems .carritoBox .carritoProducto div {
+          display: flex;
+          align-items: center; }
   .carrito #carritoMain .general {
     margin: 3px;
     width: fit-content; }
@@ -186,7 +194,7 @@ html {
       content: "Agregado correctamente!"; }
 
 .carritoBtn {
-  position: fixed;
+  position: relative;
   cursor: pointer;
   width: 40px;
   height: 40px;
@@ -200,10 +208,13 @@ html {
   .carritoBtn:active {
     box-shadow: 0 0.3em 1em -0.5em #14a73e98; }
 
-#cerrarCarrito::after {
-  content: "X"; }
+#cerrarCarrito {
+  position: fixed; }
+  #cerrarCarrito::after {
+    content: "❌"; }
 
 #vaciarCarrito {
+  position: fixed;
   bottom: 0; }
   #vaciarCarrito::after {
     content: "🗑️"; }
@@ -221,3 +232,27 @@ html {
   box-shadow: #00000059 0px 5px 15px; }
   #abrirCarrito::after {
     content: "Abrir Carrito"; }
+
+.buttonMasUno {
+  width: 30px;
+  height: 30px;
+  border: solid 2px #635994;
+  background: transparent; }
+  .buttonMasUno::after {
+    content: "➕"; }
+
+.buttonMenosUno {
+  width: 30px;
+  height: 30px;
+  border: solid 2px #635994;
+  background: transparent; }
+  .buttonMenosUno::after {
+    content: "➖"; }
+
+.buttonEliminar {
+  width: 30px;
+  height: 30px;
+  border: solid 2px #f92f60;
+  background: transparent; }
+  .buttonEliminar::after {
+    content: "❌"; }
