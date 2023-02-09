@@ -1,32 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    text-decoration: none;
-    font-family: "Open Sans", sans-serif;
-    color: white;
-  }
-  
-  a {
-    text-decoration: none;
-    color: white;
-    &:hover{
-      color: white;
-    }
-  }
-  
-  ol, ul {
-    padding-left: 0;
-    margin: 0;
-  }
-  
-  html {
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-  }
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+  color: white;
+}
 
-  .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-    margin-bottom: 0;
+a {
+  text-decoration: none;
+  color: white;
+
+  &:hover {
+    color: white;
   }
+}
+
+ol,ul {
+  padding-left: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6 {
+  margin-bottom: 0;
+}
+
+.hidden {
+  display: none !important;
+}

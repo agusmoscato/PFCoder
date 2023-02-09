@@ -4,6 +4,7 @@
     font-family: inherit;
     font-weight: 500;
     font-size: 16px;
+    margin-top: 10px;
     padding: 0.7em 1.4em 0.7em 1.1em;
     color: white;
     background: linear-gradient(0deg, #14a73e 0%, hsl(125, 90%, 68%) 100%);
@@ -12,7 +13,7 @@
     border-radius: 20em;
 
     &::after {
-        content: "Agregar al carrito"
+        content: "Agregar al carrito";
     }
 
     &:hover {
@@ -28,17 +29,15 @@
     }
 }
 
-
-.carritoBtn{
-    position: relative;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
+.carritoBtn {
+    width: 30px;
+    height: 30px;
     border-radius: 10px;
-    background: linear-gradient(0deg, #14a73e 0%, #66f771 100%);
+    background: linear-gradient(0deg, #14a73e 0%, #66f771 50%);
     border: none;
     margin: 5px;
     right: 0;
+
     &:hover {
         box-shadow: 0 0.5em 1.5em -0.5em hsla(137, 79%, 37%, 0.596);
     }
@@ -46,68 +45,56 @@
     &:active {
         box-shadow: 0 0.3em 1em -0.5em #14a73e98;
     }
-
 }
 
-#cerrarCarrito{
+#cerrarCarrito {
     position: fixed;
+    right: 20px;
+
     &::after {
         content: "❌"
     }
 }
 
-#vaciarCarrito{
+#vaciarCarrito {
     position: fixed;
     bottom: 0;
+    right: 20px;
+
     &::after {
         content: "🗑️"
     }
-
 }
 
-#abrirCarrito{
-    position: relative;
-    width: fit-content;
-    height: fit-content;
-    background: #0B6E4F;
-    padding: 7px 25px;
-    border-radius: 25px;
-    color: white;
-    margin: 10px;
-    border: solid 1px;
-    box-shadow: #00000059 0px 5px 15px;
+.buttonMasUno {
+    width: 30px;
+    height: 30px;
+    border: solid 2px #635994;
+    background: transparent;
+
     &::after {
-        content: "Abrir Carrito"
+        content: "➕"
     }
 }
 
+.buttonMenosUno {
+    width: 30px;
+    height: 30px;
+    border: solid 2px #635994;
+    background: transparent;
 
-    .buttonMasUno{
-        width: 30px;
-        height: 30px;
-        border: solid 2px #635994;
-        background: transparent;
-        &::after {
-            content: "➕"
-        }
+    &::after {
+        content: "➖"
     }
-    .buttonMenosUno{
-        width: 30px;
-        height: 30px;
-        border: solid 2px #635994;
-        background: transparent;
-        &::after {
-            content: "➖"
-        }
-    }
-    .buttonEliminar{
-        width: 30px;
-        height: 30px;
-        border: solid 2px #f92f60;
-        background: transparent;
-        &::after {
-            content: "❌"
-        }
-    }
+}
 
+.buttonEliminar {
+    width: 30px;
+    height: 30px;
+    border: solid 2px #f92f60;
+    background: transparent;
 
+    &::after {
+        content: "❌"
+    }
+}

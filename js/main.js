@@ -102,10 +102,6 @@ cerrarCarrito.addEventListener('click', () => {
     cartMain.classList.add("hidden");
 });
 
-const abrirCarrito = document.getElementById(`abrirCarrito`)
-abrirCarrito.addEventListener('click', () => {
-    cartMain.classList.remove("hidden");
-});
 
 // Inicializar carrito
 
@@ -153,21 +149,12 @@ cartButtons.forEach(cartButton => {
             });
         }
 
-        renderizarAlerta();
+        alertaProductAgregadoAlCarrito();
         renderizarCarrito();
         renderizarPrecioTotal();
         guardarCarrito();
     });
 });
-
-const alerta = document.getElementById('alerta');
-
-function renderizarAlerta() {
-  alerta.style.display = "block";
-  setTimeout(function() {
-    alerta.style.display = "none";
-  }, 2000);
-}
 
 // Agregar objetos al dom
 const cartContent = document.getElementById("carritoItems");
@@ -253,6 +240,7 @@ function eliminarProducto(id){
 
     guardarCarrito();
     pintarCarrito();
+    alertaProductEliminadoDelCarrito();
 };
 
 // Vaciar carrito
@@ -272,16 +260,52 @@ clearButton.addEventListener("click", () => {
     renderizarCarrito();
     renderizarPrecioTotal();
     cartMain.classList.add("hidden");
+    alertaCarritoVaciado();
 });
-/* 
-<button id="buttonMenosUno" class="carritoBtn"></button>
-<h2>x${producto.cantidad}</h2>
-<button id="buttonMasUno" class="carritoBtn"></button>
-<button id="buttonEliminar" class="carritoBtn"></button>
-</div> */
 
 
+// Alertas
+// Agragar producto al carrito
+function alertaProductAgregadoAlCarrito() {
+    Toastify({
+      text: "Producto agregado al carrito!",
+      duration: 3000,
+      close: true,
+      gravity: "bottom",
+      position: "left",
+      stopOnFocus: false,
+      style: {
+        background: "linear-gradient(0deg, #14a73e 0%, hsl(125, 90%, 68%) 100%)",
+      },
+  }).showToast();
+}
 
+// Producto eliminado del carrito
+function alertaProductEliminadoDelCarrito() {
+    Toastify({
+      text: "Producto eliminado del carrito!",
+      duration: 1000,
+      close: true,
+      gravity: "bottom",
+      position: "center",
+      stopOnFocus: false,
+      style: {
+        background: "linear-gradient(0deg, #a71414 0%, #f76464 100%)",
+      },
+  }).showToast();
+}
 
-
-/* let restar = document.querySelector("#buttonMenosUno"); */
+// Carrito vaciado
+function alertaCarritoVaciado() {
+    Toastify({
+      text: "Vaciaste el carrito",
+      duration: 2000,
+      close: true,
+      gravity: "top",
+      position: "center",
+      stopOnFocus: false,
+      style: {
+        background: "linear-gradient(0deg, #a71414 0%, #f76464 100%)",
+      },
+  }).showToast();
+}

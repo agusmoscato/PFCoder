@@ -7,7 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-css": "node-sass --include-path scss scss/app.scss css/main.css",
     "watch-css": "nodemon -e scss -x \"npm run build-css\""
-
   },
   "repository": {
     "type": "git",
@@ -22,5 +21,8 @@
   "devDependencies": {
     "node-sass": "^8.0.0",
     "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "toastify-js": "^1.12.0"
   }
 }

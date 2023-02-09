@@ -1,10 +1,5 @@
-.hidden{
-    display: none !important;
-}
-
 #menu-page {
     background-image: url(../media/bg.jpg);
-
     .header {
         padding: 15px 0;
         background-color: #0B6E4F;
@@ -20,14 +15,17 @@
             font-size: 40px;
             font-family: 'Fredoka One', cursive;
         }
-        #carrito{
+
+        #carrito {
             cursor: pointer;
         }
+
         div {
             display: flex;
             align-items: flex-start;
-            
+
         }
+
         h2 {
             margin-left: 10px;
             align-self: end;
@@ -36,9 +34,6 @@
 
     .menu {
         min-height: 80vh;
-
-        
-
         .filters_menu {
             padding: 0;
             display: flex;
@@ -47,8 +42,6 @@
             justify-content: center;
             list-style-type: none;
             margin: 45px 0 20px 0;
-
-
             li {
                 padding: 7px 25px;
                 cursor: pointer;
@@ -66,7 +59,7 @@
                 box-shadow: none;
             }
         }
-        
+
         .filters-content {
             .box {
                 position: relative;
@@ -76,6 +69,7 @@
                 overflow: hidden;
                 background: linear-gradient(to bottom, #e9ecef 25px, #0B6E4F 25px);
                 box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
                 .img-box {
                     background: #e9ecef;
                     display: flex;
@@ -100,20 +94,3 @@
         }
     }
 }
-
-.alerta {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background: linear-gradient(0deg, #14a73e 0%, hsl(125, 90%, 68%) 100%);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    display: none;
-    z-index: 10;
-    text-align-last: center;
-    p{
-        margin-bottom: 0;
-    }
-  }
-  

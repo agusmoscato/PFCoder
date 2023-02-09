@@ -25,6 +25,9 @@ html {
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0; }
 
+.hidden {
+  display: none !important; }
+
 /* Layout */
 .carrito #carritoMain {
   background: #dee2e68a;
@@ -34,12 +37,15 @@ html {
   z-index: 10;
   text-align: -webkit-center;
   color: black;
-  max-height: 50%;
-  overflow: auto; }
+  max-height: 25%;
+  overflow: auto;
+  padding: 20px 0px; }
+  .carrito #carritoMain h2 {
+    color: black; }
   .carrito #carritoMain #carritoItems {
     width: fit-content; }
     .carrito #carritoMain #carritoItems .carritoBox {
-      width: 70%;
+      width: 80%;
       display: flex;
       margin-top: 20px;
       flex-direction: row-reverse; }
@@ -48,8 +54,7 @@ html {
         .carrito #carritoMain #carritoItems .carritoBox .carritoImg img {
           width: -webkit-fill-available;
           background: white;
-          border-radius: 100px;
-          border: solid 1px; }
+          border-radius: 20px; }
       .carrito #carritoMain #carritoItems .carritoBox .carritoProducto {
         width: 85%;
         align-self: center;
@@ -57,7 +62,9 @@ html {
         align-items: center;
         justify-content: space-around;
         border-bottom: solid 1px black; }
-        .carrito #carritoMain #carritoItems .carritoBox .carritoProducto h3, .carrito #carritoMain #carritoItems .carritoBox .carritoProducto h2, .carrito #carritoMain #carritoItems .carritoBox .carritoProducto strong {
+        .carrito #carritoMain #carritoItems .carritoBox .carritoProducto h3,
+        .carrito #carritoMain #carritoItems .carritoBox .carritoProducto h2,
+        .carrito #carritoMain #carritoItems .carritoBox .carritoProducto strong {
           color: black; }
         .carrito #carritoMain #carritoItems .carritoBox .carritoProducto div {
           display: flex;
@@ -65,11 +72,9 @@ html {
   .carrito #carritoMain .general {
     margin: 3px;
     width: fit-content; }
-    .carrito #carritoMain .general h2, .carrito #carritoMain .general span {
+    .carrito #carritoMain .general h2,
+    .carrito #carritoMain .general span {
       color: black; }
-
-.hidden {
-  display: none !important; }
 
 #menu-page {
   background-image: url(../media/bg.jpg); }
@@ -139,20 +144,6 @@ html {
         flex-direction: column;
         align-items: center; }
 
-.alerta {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background: linear-gradient(0deg, #14a73e 0%, #64f770 100%);
-  color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-  display: none;
-  z-index: 10;
-  text-align-last: center; }
-  .alerta p {
-    margin-bottom: 0; }
-
 .footer_section {
   background-color: #0B6E4F;
   color: #ffffff;
@@ -178,6 +169,7 @@ html {
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
+  margin-top: 10px;
   padding: 0.7em 1.4em 0.7em 1.1em;
   color: white;
   background: linear-gradient(0deg, #14a73e 0%, #64f770 100%);
@@ -194,12 +186,10 @@ html {
       content: "Agregado correctamente!"; }
 
 .carritoBtn {
-  position: relative;
-  cursor: pointer;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border-radius: 10px;
-  background: linear-gradient(0deg, #14a73e 0%, #66f771 100%);
+  background: linear-gradient(0deg, #14a73e 0%, #66f771 50%);
   border: none;
   margin: 5px;
   right: 0; }
@@ -209,29 +199,17 @@ html {
     box-shadow: 0 0.3em 1em -0.5em #14a73e98; }
 
 #cerrarCarrito {
-  position: fixed; }
+  position: fixed;
+  right: 20px; }
   #cerrarCarrito::after {
     content: "❌"; }
 
 #vaciarCarrito {
   position: fixed;
-  bottom: 0; }
+  bottom: 0;
+  right: 20px; }
   #vaciarCarrito::after {
     content: "🗑️"; }
-
-#abrirCarrito {
-  position: relative;
-  width: fit-content;
-  height: fit-content;
-  background: #0B6E4F;
-  padding: 7px 25px;
-  border-radius: 25px;
-  color: white;
-  margin: 10px;
-  border: solid 1px;
-  box-shadow: #00000059 0px 5px 15px; }
-  #abrirCarrito::after {
-    content: "Abrir Carrito"; }
 
 .buttonMasUno {
   width: 30px;

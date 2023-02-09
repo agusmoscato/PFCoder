@@ -1,5 +1,5 @@
-.carrito{
-    #carritoMain{
+.carrito {
+    #carritoMain {
         background: #dee2e68a;
         width: 100%;
         position: fixed;
@@ -7,50 +7,63 @@
         z-index: 10;
         text-align: -webkit-center;
         color: black;
-        max-height: 50%;
+        max-height: 25%;
         overflow: auto;
-        #carritoItems{
+        padding: 20px 0px;
+        h2{
+            color: black;
+        }
+
+        #carritoItems {
             width: fit-content;
-            .carritoBox{
-                width: 70%;
+
+            .carritoBox {
+                width: 80%;
                 display: flex;
                 margin-top: 20px;
                 flex-direction: row-reverse;
-                .carritoImg{
+
+                .carritoImg {
                     width: 8%;
-                    img{
+
+                    img {
                         width: -webkit-fill-available;
                         background: white;
-                        border-radius: 100px;
-                        border: solid 1px;
+                        border-radius: 20px;
                     }
                 }
-                .carritoProducto{
+
+                .carritoProducto {
                     width: 85%;
                     align-self: center;
                     display: flex;
                     align-items: center;
                     justify-content: space-around;
                     border-bottom: solid 1px black;
-                    h3, h2, strong{
+
+                    h3,
+                    h2,
+                    strong {
                         color: black;
                     }
-                    div{
+
+                    div {
                         display: flex;
                         align-items: center;
                     }
                 }
             }
         }
-        
-        .general{
+
+        .general {
             margin: 3px;
             width: fit-content;
-            h2, span{
+
+            h2,
+            span {
                 color: black;
             }
         }
     }
-    
 
 }

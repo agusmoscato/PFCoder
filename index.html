@@ -4,7 +4,6 @@
     <title>Solo Bebidas</title>
     <!-- Icono -->
     <link rel="icon" type="image/x-icon" href="./media/logo.png">
-    
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -12,11 +11,12 @@
     <script src="https://kit.fontawesome.com/93e5081699.js" crossorigin="anonymous"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/main.css">
-    
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
 </head>
 
 <body id="menu-page">
+    <!-- Header -->
     <header class="header">
         <div>
             <h1>Solo Bebidas</h1>
@@ -27,16 +27,20 @@
             <h2 id="numero">0</h2>
         </div>
     </header>
+    <!-- Carrito -->
     <section class="carrito">
         <div id="carritoMain" class="hidden">
             <button id="cerrarCarrito" class="carritoBtn"></button>
+            <h2>Tu Carrito</h2>
             <div id="carritoItems"></div>
             <div class="general"></div>
             <button id="vaciarCarrito" class="carritoBtn"></button>
         </div>
     </section>
+    <!-- Seccion menu -->
     <section class="food_section layout_padding-bottom layout_padding-top  menu">
         <div class="container">
+            <!-- Filtros -->
             <ul id="filters_menu" class="filters_menu">
                 <li class="filter active" data-filter="all">Todo</li>
                 <li class="filter" data-filter="aperitivo">Aperitivos</li>
@@ -47,19 +51,12 @@
 
             <div class="filters-content">
                 <div class="row grid" id="shopContent">
-                    <!-- ITEMS DEL MENU -->
+                    <!-- Items del menu -->
                 </div>
             </div>
     </section>
-    <div class="alerta" id="alerta">
-        <p><strong>Producto agregado al carrito</strong></p>
-        <button id="abrirCarrito" class="carritoBtn"></button>
-    </div>
-    
 
-
-    <!-- end food section -->
-
+    <!-- Footer -->
     <footer class="footer_section">
         <div class="container">
             <div>
@@ -87,6 +84,7 @@
     </footer>
 
     <script src="./js/main.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 
 </html>
