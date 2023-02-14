@@ -32,7 +32,6 @@ const productos = [
     new Producto(17, "mirinda", 420, "gaseosa", "./media/MENU/GASEOSAS/MIRINDA.png"),
     new Producto(18, "paso de los toros", 430, "gaseosa", "./media/MENU/GASEOSAS/PASODELOSTOROS.png"),
     new Producto(19, "h2o", 430, "gaseosa", "./media/MENU/GASEOSAS/H2O.png"),
-
 ]
 /* ----------------- */
 
@@ -45,7 +44,6 @@ const shopContent = document.getElementById("shopContent")
 productosAlmacenados.forEach((productos) => {
     let content = document.createElement('div');
     content.classList.add("col-sm-12", "col-lg-4", "all", `${productos.categoria}`);
-
     content.innerHTML = `
         <div class="box">
             <div>
@@ -104,8 +102,6 @@ cerrarCarrito.addEventListener('click', () => {
 
 
 // Inicializar carrito
-
-
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 const guardarCarrito = () => {
@@ -117,9 +113,6 @@ const guardarContador = () => {
     counterDisplay.innerHTML = JSON.parse(localStorage.getItem("counter"));
 
 };
-
-
-
 
 
 const cartButtons = document.querySelectorAll(`.button`);
